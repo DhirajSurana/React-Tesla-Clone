@@ -1,21 +1,24 @@
 import React from "react";
 import styled from "styled-components";
+import Fade from 'react-reveal/Fade';
 
-function Section({ title, description, image, leftBtnText, rightBtnText }) {
+function Section({ title, description, image, leftBtnText, rightBtnText, id, icon }) {
   return (
-    <Wrap bgImage={image}>
-      <ItemText>
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </ItemText>
-      <Buttons>
-        <ButtonGroup>
-          <LeftButton>{leftBtnText}</LeftButton>
-          {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
-        </ButtonGroup>
-        <DownArrow src="/images/down-arrow.svg" alt="">
-        </DownArrow>
-      </Buttons>
+    <Wrap id={id} bgImage={image}>
+      <Fade bottom cascade>
+        <ItemText>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </ItemText>
+        <Buttons>
+          <ButtonGroup>
+            <LeftButton>{leftBtnText}</LeftButton>
+            {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+          </ButtonGroup>
+          {icon && <DownArrow src="/images/down-arrow.svg" alt="">
+          </DownArrow>}
+        </Buttons>
+      </Fade>
     </Wrap>
   );
 }
@@ -38,12 +41,33 @@ const Wrap = styled.div`
 const ItemText = styled.div`
   padding-top: 15vh;
   text-align: center;
+  
+  h1{
+    margin-bottom:5px;
+    font-weight:500;
+  }
+
+  @media(max-width:425px){
+    h1{
+      font-size:28px;
+    }
+
+    p{
+      font-size:14px;
+    }
+  }
 `;
 
 const ButtonGroup = styled.div`
     display:flex;
-    flex-direction:column;
-    margin-bottom:30px;
+    flex-direction:row;
+    align-items:center;
+    margin-bottom:50px;
+
+    @media(max-width:786px){
+      flex-direction:column;
+      margin-bottom:30px;
+    }
 `;
 
 const LeftButton = styled.div`
@@ -55,25 +79,20 @@ const LeftButton = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 100px;
-  opacity: 0.65;
   text-transform: uppercase;
   font-size: 12px;
   cursor: pointer;
-  &:hover{
-    background-color:white;
-    color:rgba(23, 26, 32, 0.8)
+  margin-left: 10px;
+
+  @media(max-width:786px){
+    margin-bottom: 15px;
   }
 `;
 
 const RightButton = styled(LeftButton)`
-  margin-top:15px;
-  background-color: rgba(23, 26, 32, 0.8);
-  color: white;
-
-   &:hover{
-    background-color:white;
-    color:rgba(23, 26, 32, 0.8);
-  }
+  // margin-top:15px;
+  background-color:rgba(244, 244, 244, 0.8);
+  color:rgba(23, 26, 32, 0.8);
 `;
 
 const DownArrow = styled.img`
