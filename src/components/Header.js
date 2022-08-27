@@ -69,6 +69,10 @@ const Container = styled.div`
   left:0;
   right:0;
   z-index:9;
+
+  @media(max-width:1024){
+    justify-content:space-between;
+  }
 `;
 
 const Menu = styled.div`
@@ -77,16 +81,19 @@ const Menu = styled.div`
     justify-content:center ; 
     flex:1;
     margin-left:3rem;
+    position:relative;
 
     a{
         font-weight:400;
         padding: 0 20px;
+        margin-right:10px;
         flex-wrap: no-wrap;
         color:black;
     }
 
     a:hover{
-        background-color:rgb(230,230,230);
+        background-color: rgba(41, 36, 36, 0.125);
+        border-radius:10px;
     }
 
     @media(max-width:1024px){
@@ -97,7 +104,7 @@ const Menu = styled.div`
 const RightMenu = styled.div`
     display:flex;
     align-items:center;
-    justify-content:center;  
+   
 
     a{
         text-transform:uppercase;
@@ -105,10 +112,24 @@ const RightMenu = styled.div`
         font-weight:400;
         color:black;
     }
+
+    a:hover{
+        background-color: rgba(59, 58, 58, 0.083);
+        border-radius:10px;
+    }
+    
     @media(max-width:425px){
         a{
             display:none;
         }
+    }
+
+     @media(max-width:1024px){
+       position: absolute;
+       top:0;
+       right:0;
+       padding:0.5rem;
+
     }
 `
 
@@ -153,4 +174,5 @@ const CloseWrapper = styled.div`
     display: flex;
     align-items:center;
     justify-content:flex-end;
+    margin-right:-11px;
 `
