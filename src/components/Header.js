@@ -8,7 +8,7 @@ function Header() {
     const [BurgerState, setBurgerState] = useState(false);
     return (
         <Container>
-            <a href="">
+            <a href="/">
                 <img src="/images/logo.svg" alt="" />
             </a>
             <Menu>
@@ -20,8 +20,8 @@ function Header() {
                 <a href="#6">Solar Panels</a>
             </Menu>
             <RightMenu>
-                <a href="">Shop</a>
-                <a href="">Account</a>
+                <a href="/">Shop</a>
+                <a href="/">Account</a>
                 <IconButton onClick={() => {
                     setBurgerState(true);
                 }}>
@@ -35,21 +35,21 @@ function Header() {
                             setBurgerState(false);
                         }}><CloseIcon /></IconButton>
                     </CloseWrapper>
-                    <li><a href="">Existing Inventory </a></li>
-                    <li><a href="">Used Inventory </a></li>
-                    <li><a href="">Trade-in </a></li>
-                    <li><a href="">Test Drive</a></li>
-                    <li><a href="">Insurance </a></li>
-                    <li><a href="">CyberTruck </a></li>
-                    <li><a href="">Roadster </a></li>
-                    <li><a href="">Semi </a></li>
-                    <li><a href="">Charging </a></li>
-                    <li><a href="">Powerwall </a></li>
-                    <li><a href="">Comercial Energy </a></li>
-                    <li><a href="">Utilities </a></li>
-                    <li><a href="">Find Us </a></li>
-                    <li><a href="">Support </a></li>
-                    <li><a href="">Investor Relations </a></li>
+                    <li><a href="/">Existing Inventory </a></li>
+                    <li><a href="/">Used Inventory </a></li>
+                    <li><a href="/">Trade-in </a></li>
+                    <li><a href="/">Test Drive</a></li>
+                    <li><a href="/">Insurance </a></li>
+                    <li><a href="/">CyberTruck </a></li>
+                    <li><a href="/">Roadster </a></li>
+                    <li><a href="/">Semi </a></li>
+                    <li><a href="/">Charging </a></li>
+                    <li><a href="/">Powerwall </a></li>
+                    <li><a href="/">Comercial Energy </a></li>
+                    <li><a href="/">Utilities </a></li>
+                    <li><a href="/">Find Us </a></li>
+                    <li><a href="/">Support </a></li>
+                    <li><a href="/">Investor Relations </a></li>
                 </ul>
             </BurgerMenu>
         </Container >
